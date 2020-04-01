@@ -4,42 +4,76 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.io.InputStreamReader;
 import java.io.FileNotFoundException;
 
 public class CSVReaderTest {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    Map<String, ArrayList<String[]>> city_data = new HashMap<String, ArrayList<String[]>>();
+
+    public CSVReaderTest() {
 
         File[] files = new File("/home/c1964235/WeatherApp/src/sample/DATA").listFiles();
-        showFiles(files);
+        this.CsvReader(files);
+        this.PrintCityRecord("Aberporth.csv");
     }
 
-    public static void showFiles(File[] files) {
+    public static void main(String[] args) throws FileNotFoundException {
 
+        CSVReaderTest c = new CSVReaderTest();
+
+    }
+
+    public void CsvReader(File[] files) {
 
         for (File file : files) {
             if (file.isDirectory()) {
-                System.out.println("Directory: " + file.getName());
-                showFiles(file.listFiles()); //calls same method again
+
 
             } else {
-
-                String pathname = file.getName();
-
                 try {
-                Scanner scnr = new Scanner(new File(pathname));
-                while (scnr.hasNextLine()) {
-                    System.out.println(scnr.hasNextLine());
-                    scnr.close();
-                }
-                }
-                catch (FileNotFoundException lol){
-                        System.out.println(lol);
+
+                    String pathname = "/home/c1964235/WeatherApp/src/sample/DATA/" + file.getName();
+                    System.out.println(pathname);
+
+                    Scanner scan = new Scanner(new File(pathname));
+                    ArrayList<String[]> records = new ArrayList<String[]>();
+                    String[] record = new String[2];
+                    while (scan.hasNext()) {
+                        record = scan.nextLine().split(",");
+                        records.add(record);
                     }
+
+                    this.city_data.put(file.getName(), records);
+
+
+                } catch (FileNotFoundException e) {
+                    System.out.println(e);
                 }
+
             }
         }
+
+
     }
+
+    public void PrintCityRecord(String name) {
+
+        ArrayList<String[]> records = this.city_data.get(name);
+        //now records has your records
+        //here is a way to loop through the records
+        for (String[] temp : records) {
+            for (String temp1 : temp) {
+                System.out.println(temp1 + "");
+            }
+            System.out.println("\n");
+        }
+
+
+    }
+
+}
 
