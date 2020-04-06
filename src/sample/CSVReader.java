@@ -1,30 +1,36 @@
 package sample;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.io.InputStreamReader;
-import java.io.FileNotFoundException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class CSVReaderTest {
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+public class CSVReader {
 
     Map<String, ArrayList<String[]>> city_data = new HashMap<String, ArrayList<String[]>>();
 
-    public CSVReaderTest() {
+    public CSVReader() {
 
         File[] files = new File("/home/c1964235/WeatherApp/src/sample/DATA").listFiles();
         this.CsvReader(files);
-        this.PrintCityRecord("Aberporth.csv");
+      //  this.PrintCityRecord("Aberporth.csv");
+       // for( File station : files){
+         //   System.out.println(station);
+ //       }
+
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+   // public static void main(String[] args) throws FileNotFoundException {
 
-        CSVReaderTest c = new CSVReaderTest();
+        //new object of the class CSVreader created
+     //   CSVReader c = new CSVReader();
+    //}
 
+
+    public Map<String, ArrayList<String[]>> getCity_data() {
+        return city_data;
     }
 
     public void CsvReader(File[] files) {
@@ -37,7 +43,6 @@ public class CSVReaderTest {
                 try {
 
                     String pathname = "/home/c1964235/WeatherApp/src/sample/DATA/" + file.getName();
-                    System.out.println(pathname);
 
                     Scanner scan = new Scanner(new File(pathname));
                     ArrayList<String[]> records = new ArrayList<String[]>();
@@ -47,8 +52,7 @@ public class CSVReaderTest {
                         records.add(record);
                     }
 
-                    this.city_data.put(file.getName(), records);
-
+                    this.city_data.put(file.getName().replace(".csv", ""), records);
 
                 } catch (FileNotFoundException e) {
                     System.out.println(e);
@@ -71,8 +75,6 @@ public class CSVReaderTest {
             }
             System.out.println("\n");
         }
-
-
     }
 
 }

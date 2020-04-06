@@ -7,10 +7,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
    <children>
       <TabPane layoutX="13.0" layoutY="52.0" prefHeight="378.0" prefWidth="575.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
+            <Tab fx:id="stations" text="Stations">
+              <content>
+           <fx:include source="stations.fxml" />
+              </content>
+            </Tab>
           <Tab fx:id="graphTab" text="Graph Tab">
                <content>
                  <fx:include source="graph_tab.fxml" />
@@ -20,11 +25,6 @@
                <content>
                  <fx:include source="image_tab.fxml" />
                </content>
-            </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
             </Tab>
         </tabs>
       </TabPane>
