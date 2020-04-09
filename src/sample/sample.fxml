@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
    <children>
-      <TabPane layoutX="13.0" layoutY="52.0" prefHeight="378.0" prefWidth="575.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="10.0" layoutY="45.0" prefHeight="549.0" prefWidth="972.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
             <Tab fx:id="stations" text="Stations">
               <content>
-           <fx:include source="stations.fxml" />
+           <fx:include source="station.fxml" />
               </content>
             </Tab>
           <Tab fx:id="graphTab" text="Graph Tab">
@@ -28,7 +28,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="33.0" layoutY="20.0" text="WEATHER APP" textFill="#478062">
+      <Label layoutX="34.0" layoutY="14.0" text="WEATHER APP" textFill="#478062">
          <font>
             <Font size="18.0" />
          </font></Label>
