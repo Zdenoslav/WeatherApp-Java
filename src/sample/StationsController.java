@@ -102,7 +102,69 @@ public class StationsController {
 
     @FXML
     private Label TotRainFall6;///
-   @FXML
+
+    @FXML
+    private Label MaxTemp7;
+
+    @FXML
+    private Label MinTemp7;
+
+    @FXML
+    private Label TotAirFrost7;
+
+    @FXML
+    private Label TotRainFall7;
+
+    @FXML
+    private Label MaxTemp8;
+
+    @FXML
+    private Label MinTemp8;
+
+    @FXML
+    private Label TotAirFrost8;
+
+    @FXML
+    private Label TotRainFall8;
+
+    @FXML
+    private Label MaxTemp9;
+
+    @FXML
+    private Label MinTemp9;
+
+    @FXML
+    private Label TotAirFrost9;
+
+    @FXML
+    private Label TotRainFall9;
+
+    @FXML
+    private Label MaxTemp10;
+
+    @FXML
+    private Label MinTemp10;
+
+    @FXML
+    private Label TotAirFrost10;
+
+    @FXML
+    private Label TotRainFall10;
+
+    @FXML
+    private Label MaxTemp11;
+
+    @FXML
+    private Label MinTemp11;
+
+    @FXML
+    private Label TotAirFrost11;
+
+    @FXML
+    private Label TotRainFall11;
+
+
+    @FXML
     private ComboBox<String> comboBox;
 
    @FXML
@@ -182,6 +244,60 @@ public class StationsController {
                    MinTemp5.setText(temp[3]);
                    TotAirFrost5.setText(temp[4]);
                    TotRainFall5.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("7")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp6.setText(temp[2]);
+                   MinTemp6.setText(temp[3]);
+                   TotAirFrost6.setText(temp[4]);
+                   TotRainFall6.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("8")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp7.setText(temp[2]);
+                   MinTemp7.setText(temp[3]);
+                   TotAirFrost7.setText(temp[4]);
+                   TotRainFall7.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("9")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp8.setText(temp[2]);
+                   MinTemp8.setText(temp[3]);
+                   TotAirFrost8.setText(temp[4]);
+                   TotRainFall8.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("10")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp9.setText(temp[2]);
+                   MinTemp9.setText(temp[3]);
+                   TotAirFrost9.setText(temp[4]);
+                   TotRainFall9.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("11")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp10.setText(temp[2]);
+                   MinTemp10.setText(temp[3]);
+                   TotAirFrost10.setText(temp[4]);
+                   TotRainFall10.setText(temp[5]);
+               }
+           }
+           else if(temp[0].equals("2019") && temp[1].equals("12")){
+               for (String temp1 : temp) {
+                   System.out.println(temp1 + "");
+                   MaxTemp11.setText(temp[2]);
+                   MinTemp11.setText(temp[3]);
+                   TotAirFrost11.setText(temp[4]);
+                   TotRainFall11.setText(temp[5]);
                }
            }
        }

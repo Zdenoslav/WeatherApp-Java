@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -97,7 +98,13 @@
             <Label fx:id="MinTemp11" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
             <Label fx:id="TotAirFrost11" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
             <Label fx:id="TotRainFall11" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
+            <Label text="Month" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
+      <Label layoutX="760.0" layoutY="29.0" prefHeight="39.0" prefWidth="80.0" text="2019">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
