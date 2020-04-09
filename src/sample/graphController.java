@@ -5,6 +5,9 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class graphController {
 
     @FXML
@@ -15,9 +18,11 @@ public class graphController {
         XYChart.Series series1 = new XYChart.Series();
         NumberAxis xAxis = new NumberAxis();
         NumberAxis yAxis = new NumberAxis();
-        xAxis.setLabel("X Axis");
-        yAxis.setLabel("Y Axis");
-        series1.setName("Example Series");
+        xAxis.setLabel("Month");
+        yAxis.setLabel("Max Temperature");
+        //name of the city
+        series1.setName("");
+
         series1.getData().add(new XYChart.Data<>(1, 20));
         series1.getData().add(new XYChart.Data<>(2, 100));
         series1.getData().add(new XYChart.Data<>(3, 80));

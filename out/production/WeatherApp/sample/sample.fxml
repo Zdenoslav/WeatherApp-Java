@@ -16,12 +16,12 @@
            <fx:include source="station.fxml" />
               </content>
             </Tab>
-          <Tab fx:id="graphTab" text="Graph Tab">
+          <Tab fx:id="graphTab" text="Historical Data">
                <content>
                  <fx:include source="graph_tab.fxml" />
                </content>
             </Tab>
-          <Tab fx:id="imgTab" text="Image">
+          <Tab fx:id="imgTab" text="Report">
                <content>
                  <fx:include source="image_tab.fxml" />
                </content>

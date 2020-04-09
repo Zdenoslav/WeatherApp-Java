@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="586.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StationsController">
    <children>
       <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="48.0" onAction="#comboChanged" prefWidth="150.0" promptText="STATIONS" />
-      <GridPane layoutX="188.0" layoutY="73.0" prefHeight="448.0" prefWidth="668.0">
+      <GridPane fx:id="Table" layoutX="44.0" layoutY="103.0" prefHeight="418.0" prefWidth="812.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,77 +34,17 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Max Temperature" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-            <Label text="Min Temperature" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-            <Label text="Total Air Frost" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-            <Label text="Total Rain Fall" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
-            <Label text="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="MaxTemp" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="MinTemp" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="TotAirFrost" layoutX="236.0" layoutY="163.0" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label layoutX="236.0" layoutY="163.0" text="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="TotRainFall" layoutX="349.0" layoutY="163.0" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label fx:id="MaxTemp1" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="MinTemp1" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="TotAirFrost1" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label fx:id="TotRainFall1" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <Label text="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label text="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label fx:id="MaxTemp2" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label fx:id="MinTemp2" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label fx:id="TotAirFrost2" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label fx:id="TotRainFall2" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Label fx:id="MaxTemp3" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label fx:id="MinTemp3" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label fx:id="TotAirFrost3" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label fx:id="TotRainFall3" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-            <Label text="5" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label fx:id="MaxTemp4" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label fx:id="MinTemp4" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label fx:id="TotAirFrost4" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label fx:id="TotRainFall4" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
-            <Label text="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label text="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label text="8" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label text="9" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label text="10" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-            <Label text="11" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-            <Label text="12" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
-            <Label fx:id="MaxTemp5" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label fx:id="MinTemp5" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label fx:id="MaxTemp6" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label fx:id="MinTemp6" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label fx:id="TotAirFrost6" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label fx:id="TotAirFrost5" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label fx:id="TotRainFall5" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
-            <Label fx:id="TotRainFall6" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
-            <Label fx:id="MaxTemp7" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label fx:id="MinTemp7" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label fx:id="TotAirFrost7" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label fx:id="TotRainFall7" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
-            <Label fx:id="MaxTemp8" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label fx:id="MinTemp8" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label fx:id="TotAirFrost8" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label fx:id="TotRainFall8" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
-            <Label fx:id="MaxTemp9" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-            <Label fx:id="MinTemp9" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-            <Label fx:id="TotAirFrost9" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-            <Label fx:id="TotRainFall9" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
-            <Label fx:id="MaxTemp10" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-            <Label fx:id="MinTemp10" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-            <Label fx:id="TotAirFrost10" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-            <Label fx:id="TotRainFall10" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="11" />
-            <Label fx:id="MaxTemp11" text="0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
-            <Label fx:id="MinTemp11" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
-            <Label fx:id="TotAirFrost11" text="0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
-            <Label fx:id="TotRainFall11" text="0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="12" />
-            <Label text="Month" GridPane.halignment="CENTER" />
+            <Label GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Label GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <Label GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <Label GridPane.columnIndex="4" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
-      <Label layoutX="760.0" layoutY="29.0" prefHeight="39.0" prefWidth="80.0" text="2019">
+      <Label fx:id="yearTitle" layoutX="760.0" layoutY="29.0" prefHeight="39.0" prefWidth="80.0">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
+      <ComboBox fx:id="comboBox2" layoutX="200.0" layoutY="48.0" onAction="#comboChanged2" prefHeight="25.0" prefWidth="92.0" promptText="YEAR" />
    </children>
 </AnchorPane>

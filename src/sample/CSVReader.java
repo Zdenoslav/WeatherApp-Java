@@ -11,10 +11,6 @@ public class CSVReader {
 
     Map<String, ArrayList<String[]>> city_data = new HashMap<String, ArrayList<String[]>>();
 
-    Map<String, ArrayList<String[]>> city_data1 = new HashMap<String, ArrayList<String[]>>();
-
-
-
     public CSVReader() {
 
         File[] files = new File("/home/c1964235/WeatherApp/src/sample/DATA").listFiles();
@@ -33,9 +29,9 @@ public class CSVReader {
     //}
 
 
-    public Map<String, ArrayList<String[]>> getCity_data() {
-        return city_data;
-    }
+    public Map<String, ArrayList<String[]>> getCity_data() { return city_data; }
+
+
 
     public void CsvReader(File[] files) {
 
