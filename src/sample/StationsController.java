@@ -28,6 +28,9 @@ public class StationsController {
     private GridPane Table;
 
     @FXML
+    private Label cityTitle;
+
+    @FXML
     private Label yearTitle;
 
     @FXML
@@ -85,11 +88,17 @@ public class StationsController {
        //if nothings is chosen this line is executed
        if (this.city != null && this.year != null) {
 
+           //clear all the previous data
            Table.getChildren().clear();
 
            this.setTableHeader();
 
+           //change the label to the actual city
+           this.cityTitle.setText(this.city);
+
+           //change the label to the actual year
            this.yearTitle.setText(this.year);
+
            //access the data of a particular/chosen city
            ArrayList<String[]> records = this.CityData.get(this.city);
 
@@ -110,6 +119,7 @@ public class StationsController {
        }
 
    }
+
     private void setTableHeader() {
 
         Table.add(new Text("Month"),  0, 0);

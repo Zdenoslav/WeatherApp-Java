@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.graphController">
-    <children>
-        <LineChart fx:id="myChart" layoutX="25.0" layoutY="9.0" prefHeight="331.0" prefWidth="500.0">
-            <xAxis>
-                <NumberAxis side="BOTTOM" />
-            </xAxis>
-            <yAxis>
-                <NumberAxis side="LEFT" />
-            </yAxis>
-        </LineChart>
-    </children>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="869.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.graphController">
+   <children>
+      <Label layoutX="579.0" layoutY="481.0" text="YEAR">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="266.0" layoutY="254.0" rotate="-90.0" text="MONTH">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="myChart" layoutX="329.0" layoutY="50.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <ComboBox fx:id="GraphStationCombo" layoutX="27.0" layoutY="75.0" onAction="#comboGraphStationChanged" prefHeight="25.0" prefWidth="123.0" promptText="STATION" />
+      <ComboBox fx:id="GraphYearCombo" layoutX="179.0" layoutY="75.0" onAction="#comboGraphYearChanged" prefHeight="25.0" prefWidth="112.0" promptText="YEAR" />
+   </children>
 </Pane>
