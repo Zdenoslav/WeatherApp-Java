@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WeatherApp/sample/graphController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WeatherApp/sample/graph_tab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WeatherApp/sample/graph_tab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/StationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/StationsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/graphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/graphController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/graph_tab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/graph_tab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/station.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/station.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="300">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/station.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+            <state relative-caret-position="458">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -112,13 +114,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/graphController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="172">
+              <caret line="134" column="48" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
               <folding>
-                <element signature="e#3878#3894#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,18 +129,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/graph_tab.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="219">
+              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/StationsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="406">
+              <caret line="127" column="12" lean-forward="true" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,17 +201,18 @@
         <option value="$PROJECT_DIR$/src/sample/station.fxml" />
         <option value="$PROJECT_DIR$/out/production/WeatherApp/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/CSVReader.java" />
+        <option value="$PROJECT_DIR$/src/sample/graph_tab.fxml" />
+        <option value="$PROJECT_DIR$/out/production/WeatherApp/sample/graph_tab.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/graphController.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/StationsController.java" />
-        <option value="$PROJECT_DIR$/src/sample/graph_tab.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/graphController.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1975" />
-    <option name="y" value="90" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="2058" />
+    <option name="y" value="107" />
     <option name="width" value="1717" />
     <option name="height" value="902" />
   </component>
@@ -219,6 +225,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,8 +249,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -477,12 +483,13 @@
       <workItem from="1586455562263" duration="13041000" />
       <workItem from="1586695339001" duration="12216000" />
       <workItem from="1586722904769" duration="2840000" />
-      <workItem from="1586779444271" duration="8887000" />
+      <workItem from="1586779444271" duration="9137000" />
+      <workItem from="1586874767637" duration="5586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171341000" />
+    <option name="totallyTimeSpent" value="177177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -494,7 +501,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="1920" height="1011" extended-state="6" />
+    <frame x="2058" y="107" width="1717" height="902" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" weight="0.25506938" />
@@ -502,11 +509,11 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6703755" visible="true" weight="0.16915688" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6703755" visible="true" weight="0.1915021" />
       <window_info id="Favorites" order="6" weight="0.37402752" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32865497" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44671202" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26649418" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.49433106" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -517,7 +524,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32982457" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.2664399" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.26520053" />
       <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.32982457" />
@@ -532,7 +539,7 @@
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="SciView" order="11" weight="0.32977587" />
+      <window_info anchor="right" id="SciView" order="11" weight="0.32974267" />
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" weight="0.25506938" />
@@ -708,20 +715,27 @@
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="jar://$PROJECT_DIR$/../Desktop/JAVA/javafx-sdk-11.0.2/lib/javafx.base.jar!/com/sun/javafx/reflect/Trampoline.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="285">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/station.fxml">
+    <entry file="file://$PROJECT_DIR$/out/production/WeatherApp/sample/graph_tab.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+        <state relative-caret-position="251">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -734,44 +748,48 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CSVReader.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="44" column="7" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+        <state relative-caret-position="300">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../Desktop/JAVA/javafx-sdk-11.0.2/lib/javafx.base.jar!/com/sun/javafx/reflect/Trampoline.class">
+    <entry file="file://$PROJECT_DIR$/src/sample/station.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/StationsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/graph_tab.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="458">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/graphController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="172">
+          <caret line="134" column="48" selection-start-line="134" selection-start-column="48" selection-end-line="134" selection-end-column="48" />
           <folding>
-            <element signature="e#3878#3894#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/graph_tab.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/StationsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="127" column="12" lean-forward="true" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

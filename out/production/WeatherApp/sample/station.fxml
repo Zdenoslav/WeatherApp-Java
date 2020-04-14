@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="586.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StationsController">
+<AnchorPane prefHeight="627.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StationsController">
    <children>
       <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="48.0" onAction="#comboChanged" prefWidth="150.0" promptText="STATION" />
       <GridPane fx:id="Table" layoutX="44.0" layoutY="103.0" prefHeight="418.0" prefWidth="812.0">
@@ -51,5 +51,6 @@
             <Font size="30.0" />
          </font>
       </Label>
+      <Button fx:id="btnHistory" layoutX="582.0" layoutY="569.0" mnemonicParsing="false" text="SHOW HISTORICAL DATA" />
    </children>
 </AnchorPane>

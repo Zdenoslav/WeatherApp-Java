@@ -7,9 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import jdk.jfr.Category;
-import jdk.jfr.Label;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -26,6 +26,9 @@ public class graphController {
 
     @FXML
     private Label yearText;
+
+    @FXML
+    private Label cityText;
 
     @FXML
     private BarChart myChart;
@@ -88,7 +91,7 @@ public class graphController {
 
             this.city = GraphStationCombo.getValue();
 
-            this.setGraph();
+           // this.setGraph();
 
             System.out.println("DEEP WORK");
 
@@ -99,7 +102,7 @@ public class graphController {
 
             this.year = GraphYearCombo.getValue();
 
-            this.setGraph();
+           // this.setGraph();
 
             System.out.println("DEEP WORK");
 
@@ -117,14 +120,19 @@ public class graphController {
 
         public void setMyChart() {
 
+            myChart.getData().clear();
+
             //if nothings is chosen this line is executed
             if (this.city != null && this.year != null && this.month != null) {
 
-                //change the label to the actual city
-                this.monthText.setText(this.month);
+                //change the label to the actual month
+              this.monthText.setText(this.month);
 
-                //change the label to the actual city
-                this.yearText.setText(this.year);
+                //change the label to the actual year
+               this.yearText.setText(this.year);
+
+               //change the label to the actual city
+               this.cityText.setText(this.city);
 
                 //access the data of a particular/chosen city
                 ArrayList<String[]> records = this.CityData.get(this.city);

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="996.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
    <children>
-      <TabPane layoutX="10.0" layoutY="45.0" prefHeight="549.0" prefWidth="972.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="62.0" prefHeight="598.0" prefWidth="1046.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
             <Tab fx:id="stations" text="Stations">
               <content>
