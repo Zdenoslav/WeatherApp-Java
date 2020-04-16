@@ -38,5 +38,6 @@
             <Font size="25.0" />
          </font>
       </Label>
+      <Button fx:id="btnReport" layoutX="77.0" layoutY="504.0" mnemonicParsing="false" onAction="#makeReport" prefHeight="39.0" prefWidth="147.0" text="REPORT" />
    </children>
 </Pane>

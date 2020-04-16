@@ -6,11 +6,17 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import jdk.jfr.Category;
 
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -48,6 +54,9 @@ public class graphController {
     private String TAF;
 
     private String TRF;
+
+    @FXML
+    private Button btnReport;
 
     @FXML
     private ComboBox<String> GraphYearCombo;
@@ -91,7 +100,7 @@ public class graphController {
 
             this.city = GraphStationCombo.getValue();
 
-           // this.setGraph();
+            this.setGraph();
 
             System.out.println("DEEP WORK");
 
@@ -118,6 +127,44 @@ public class graphController {
 
         }
 
+        @FXML
+        private void makeReport(ActionEvent event) {
+
+            System.out.println("lol");
+
+            this.FileMake();
+
+            this.btnReport.setText("You ROCK");
+        }
+
+        public void FileMake () {
+
+            try{
+
+                 String filename = "rock.txt";
+                 String text = "Hello, Youtube";
+
+                  File file = new File(filename);
+
+                if(!file.exists()){
+                    file.createNewFile();
+
+                //now lets wirte our text to new file
+                FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(text);
+                bw.close();
+
+                System.out.println("File " + filename + " has been created");
+
+                } else {
+                      System.out.println("File " + filename + " already exists.");
+                }
+             } catch(IOException e){
+                  e.printStackTrace();
+            }
+        }
+
         public void setMyChart() {
 
             myChart.getData().clear();
@@ -126,7 +173,7 @@ public class graphController {
             if (this.city != null && this.year != null && this.month != null) {
 
                 //change the label to the actual month
-              this.monthText.setText(this.month);
+                this.monthText.setText(this.month);
 
                 //change the label to the actual year
                this.yearText.setText(this.year);

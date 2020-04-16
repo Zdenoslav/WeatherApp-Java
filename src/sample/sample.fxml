@@ -23,7 +23,7 @@
             </Tab>
           <Tab fx:id="imgTab" text="Report">
                <content>
-                 <fx:include source="image_tab.fxml" />
+                 <fx:include source="report_tab.fxml" />
                </content>
             </Tab>
         </tabs>

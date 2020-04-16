@@ -51,6 +51,5 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnHistory" layoutX="582.0" layoutY="569.0" mnemonicParsing="false" text="SHOW HISTORICAL DATA" />
    </children>
 </AnchorPane>

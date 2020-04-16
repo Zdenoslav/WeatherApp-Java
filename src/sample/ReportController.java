@@ -3,7 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.image.*;
 
-public class imageController {
+public class ReportController {
 
     @FXML
     private ImageView imgView;

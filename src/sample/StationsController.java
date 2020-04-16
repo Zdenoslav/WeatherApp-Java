@@ -41,9 +41,6 @@ public class StationsController {
     @FXML
     private ComboBox<String> comboBox2;
 
-   // @FXML
- //   private Button btnHistory;
-
    @FXML
     private void initialize() {
 
@@ -86,6 +83,7 @@ public class StationsController {
        this.setTable();
 
    }
+
 
  //  public static void btnHistory(ActionEvent event) {
 
