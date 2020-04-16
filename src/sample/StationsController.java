@@ -56,6 +56,7 @@ public class StationsController {
            System.out.println( key);
        }
 
+       //keyset zoznam miest
        ObservableList<String> list = FXCollections.observableArrayList(this.CityData.keySet());
 
        comboBox.setItems(list);
@@ -111,6 +112,7 @@ public class StationsController {
            //access the data of a particular/chosen city
            ArrayList<String[]> records = this.CityData.get(this.city);
 
+           //one line
            for (String[] temp : records) {
 
                if (temp[0].equals(this.year)){

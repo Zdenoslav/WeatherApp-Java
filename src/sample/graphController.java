@@ -13,10 +13,7 @@ import javafx.scene.text.Text;
 import jdk.jfr.Category;
 
 import java.awt.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -54,6 +51,22 @@ public class graphController {
     private String TAF;
 
     private String TRF;
+
+    private Integer minTempYear = 0;
+
+    private Integer minTempMonth = 0;
+
+    private Integer maxTempYear = 0;
+
+    private Integer maxTempMonth = 0;
+
+    private Double averageRF = 0.0;
+
+    private Double averageAF = 0.0;
+
+    private Double minTemp = Double.MAX_VALUE;
+
+    private Double maxTemp = Double.MIN_VALUE;
 
     @FXML
     private Button btnReport;
@@ -130,42 +143,81 @@ public class graphController {
         @FXML
         private void makeReport(ActionEvent event) {
 
-            System.out.println("lol");
+            this.CountReport();
 
             this.FileMake();
 
             this.btnReport.setText("You ROCK");
         }
 
-        public void FileMake () {
 
-            try{
+        public void CountReport() {
 
-                 String filename = "rock.txt";
-                 String text = "Hello, Youtube";
 
-                  File file = new File(filename);
+            Double totalAF = 0.0;
+            Double totalRF = 0.0;
 
-                if(!file.exists()){
-                    file.createNewFile();
+            //access the data of a particular/chosen city
+            ArrayList<String[]> records = this.CityData.get(this.city);
 
-                //now lets wirte our text to new file
-                FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(text);
-                bw.close();
+            for (String[] temp : records) {
 
-                System.out.println("File " + filename + " has been created");
+                if (Double.parseDouble(temp[2]) > maxTemp){
 
-                } else {
-                      System.out.println("File " + filename + " already exists.");
+                    this.maxTemp = Double.parseDouble(temp[2]);
+                    this.maxTempYear = Integer.parseInt(temp[0]);
+                    this.maxTempMonth = Integer.parseInt(temp[1]);
+
                 }
-             } catch(IOException e){
-                  e.printStackTrace();
+
+                if (Double.parseDouble(temp[3])< minTemp){
+
+                    this.minTemp = Double.parseDouble(temp[3]);
+                    this.minTempYear = Integer.parseInt(temp[0]);
+                    this.minTempMonth = Integer.parseInt(temp[1]);
+
+                }
+
+                totalAF+= Double.parseDouble(temp[4]);
+                totalRF+= Double.parseDouble(temp[5]);
+
+            }
+
+            this.averageAF = totalAF/records.size();
+            this.averageRF = totalRF/records.size();
+
+            System.out.println(averageAF);
+            System.out.println(maxTemp);
+            System.out.println(maxTempMonth);
+            System.out.println(maxTempYear);
+
+        }
+
+
+        public void FileMake() {
+
+
+
+
+            String filename = "report.txt";
+
+            try {
+                PrintWriter outputStream = new PrintWriter(filename);
+                for (int row=0; row < 64; row++){
+                    for(int col=0; col < 64; col++){
+                        outputStream.print("*");
+                    }
+                    outputStream.println("");
+                }
+                outputStream.close(); //flushes the data to the file
+                System.out.println("Done");
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
 
-        public void setMyChart() {
+         public void setMyChart() {
 
             myChart.getData().clear();
 
