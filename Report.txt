@@ -1,0 +1,222 @@
+ Number 1
+ Station : Heathrow
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Ross-on-Wye
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Lerwick
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Bradford
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Nairn
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Hurn
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Tiree
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Shawbury
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Dunstaffnage
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Whitby
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Wick Airport
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Yeovilton
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Stornoway Airport
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Aberporth
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Newton Rigg
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Cardiff Bute Park
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Eskdalemuir
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Leuchars
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Sutton Bonington
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Oxford
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Braemar
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Armagh
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Cwmystwyth
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Waddington
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Camborne
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Chivenor
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Manston
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Paisley
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Southampton
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Ballypatrick Forest
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Valley
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Ringway
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Lowestoft
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Sheffield
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Cambridge NIAB
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Durham
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69
+ Number 1
+ Station : Eastbourne
+ Highest : 7 2015 25.5
+ Lowest : 12 2012 -4.3
+ Average annual air frost : 128.81
+ Average annual rainfall : 2314.69

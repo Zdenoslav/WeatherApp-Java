@@ -15,6 +15,7 @@ import jdk.jfr.Category;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 public class graphController {
@@ -67,6 +68,8 @@ public class graphController {
     private Double minTemp = Double.MAX_VALUE;
 
     private Double maxTemp = Double.MIN_VALUE;
+
+    private String names;
 
     @FXML
     private Button btnReport;
@@ -153,64 +156,83 @@ public class graphController {
 
         public void CountReport() {
 
-
             Double totalAF = 0.0;
             Double totalRF = 0.0;
 
-            //access the data of a particular/chosen city
-            ArrayList<String[]> records = this.CityData.get(this.city);
+           // Iterator<K> itr = CityData.keySet().iterator();
+            for (String key : CityData.keySet()) {
 
-            for (String[] temp : records) {
+                this.names = key;
 
-                if (Double.parseDouble(temp[2]) > maxTemp){
+                //access the data of a particular/chosen city
+                ArrayList<String[]> records = this.CityData.get(this.city);
 
-                    this.maxTemp = Double.parseDouble(temp[2]);
-                    this.maxTempYear = Integer.parseInt(temp[0]);
-                    this.maxTempMonth = Integer.parseInt(temp[1]);
+                    for (String[] temp : records) {
 
-                }
+                        if (Double.parseDouble(temp[2]) > maxTemp){
 
-                if (Double.parseDouble(temp[3])< minTemp){
+                            this.maxTemp = Double.parseDouble(temp[2]);
+                            this.maxTempYear = Integer.parseInt(temp[0]);
+                            this.maxTempMonth = Integer.parseInt(temp[1]);
 
-                    this.minTemp = Double.parseDouble(temp[3]);
-                    this.minTempYear = Integer.parseInt(temp[0]);
-                    this.minTempMonth = Integer.parseInt(temp[1]);
+                        }
 
-                }
+                        if (Double.parseDouble(temp[3])< minTemp){
 
-                totalAF+= Double.parseDouble(temp[4]);
-                totalRF+= Double.parseDouble(temp[5]);
+                            this.minTemp = Double.parseDouble(temp[3]);
+                            this.minTempYear = Integer.parseInt(temp[0]);
+                            this.minTempMonth = Integer.parseInt(temp[1]);
+
+                        }
+
+                        totalAF+= Double.parseDouble(temp[4]);
+                        totalRF+= Double.parseDouble(temp[5]);
+
+                    }
+
+                    this.averageAF = totalAF/records.size();
+                    this.averageRF = totalRF/records.size();
+
+
 
             }
 
-            this.averageAF = totalAF/records.size();
-            this.averageRF = totalRF/records.size();
+
 
             System.out.println(averageAF);
             System.out.println(maxTemp);
             System.out.println(maxTempMonth);
             System.out.println(maxTempYear);
-
+            System.out.println(names);
         }
 
 
         public void FileMake() {
 
+            System.out.println(averageAF);
 
-
-
-            String filename = "report.txt";
+            String filename = "Report.txt";
 
             try {
                 PrintWriter outputStream = new PrintWriter(filename);
-                for (int row=0; row < 64; row++){
-                    for(int col=0; col < 64; col++){
-                        outputStream.print("*");
-                    }
+
+
+                            outputStream.printf(" Number " + "1");
+                            outputStream.println();
+                            outputStream.printf(" Station : " +  names);
+                            outputStream.println();
+                            outputStream.printf(" Highest : " + maxTempMonth + " " + maxTempYear + " " + maxTemp );
+                            outputStream.println();
+                            outputStream.printf(" Lowest : " + minTempMonth + " " + minTempYear + " " + minTemp );
+                            outputStream.println();
+                            outputStream.printf(" Average annual air frost : " + "%.2f", averageAF );
+                            outputStream.println();
+                            outputStream.printf(" Average annual rainfall : " + "%.2f", averageRF );
+
+
                     outputStream.println("");
-                }
+
                 outputStream.close(); //flushes the data to the file
-                System.out.println("Done");
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -258,7 +280,7 @@ public class graphController {
                 }
 
             }
-        }
+         }
 
         public void setGraph() {
 

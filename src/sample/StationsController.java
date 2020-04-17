@@ -53,7 +53,7 @@ public class StationsController {
 
        //set of all the city names.keyset
        for ( String key : this.CityData.keySet() ) {
-           System.out.println( key);
+           System.out.println(key);
        }
 
        //keyset zoznam miest
@@ -86,13 +86,6 @@ public class StationsController {
    }
 
 
- //  public static void btnHistory(ActionEvent event) {
-
-   //    Tab tab = new Tab();
-     //  TabPane.getTabs().add(tab);
- //  }
-
-   //
    public void setTable() {
 
        //if nothings is chosen this line is executed

@@ -22,13 +22,6 @@ public class CSVReader {
 
     }
 
-   // public static void main(String[] args) throws FileNotFoundException {
-
-        //new object of the class CSVreader created
-     //   CSVReader c = new CSVReader();
-    //}
-
-
     public Map<String, ArrayList<String[]>> getCity_data() { return city_data; }
 
 
