@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
    <children>
-      <TabPane layoutY="62.0" prefHeight="598.0" prefWidth="1046.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="91.0" prefHeight="663.0" prefWidth="1100.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
             <Tab fx:id="stations" text="Stations">
               <content>
@@ -28,7 +28,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label fx:id="mainTitle" layoutX="34.0" layoutY="14.0" text="WEATHER APP" textFill="#478062">
+      <Label fx:id="mainTitle" layoutX="34.0" layoutY="14.0" text="WEATHER APP VIEWER" textFill="#478062">
          <font>
             <Font size="18.0" />
          </font></Label>

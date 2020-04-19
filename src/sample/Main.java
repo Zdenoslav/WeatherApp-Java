@@ -15,9 +15,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Weather App");
-        primaryStage.setScene(new Scene(root, 1000, 700));
+        primaryStage.setScene(new Scene(root, 1100, 750));
+        root.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         primaryStage.show();
     }
-    //get data from CSV
 
 }

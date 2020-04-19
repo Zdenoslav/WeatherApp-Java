@@ -1,0 +1,94 @@
+
+.root {
+
+    -fx-background-color: aliceblue;
+
+}
+
+
+#yearText {
+
+
+}
+
+#Text {
+
+    -fx-alignment: center;
+}
+
+#setTableHeader {
+
+    -fx-background-color: crimson;
+}
+
+#graphTab {
+    -fx-font-size: 20px;
+    -fx-font: bold italic 10pt "Arial";
+}
+
+#stations {
+    -fx-font-size: 15px;
+    -fx-font: bold italic 10pt "Arial";
+}
+
+#Table {
+
+    -fx-border-radius: 20px;
+
+}
+
+#mainTitle {
+
+    -fx-font: bold italic 30pt "Arial";
+
+}
+
+#comboBox {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+
+}
+
+#comboBox2 {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+#GraphYearCombo {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+
+}
+
+#GraphMonthCombo {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+#GraphStationCombo {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+#btnReport {
+
+    -fx-font-size: 15px;
+    -fx-background-color: aliceblue;
+    -fx-font: bold italic 10pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
