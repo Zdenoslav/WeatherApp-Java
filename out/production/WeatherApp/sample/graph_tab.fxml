@@ -10,9 +10,9 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.graphController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1069.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.graphController">
    <children>
-      <BarChart fx:id="myChart" layoutX="507.0" layoutY="55.0">
+      <BarChart fx:id="myChart" layoutX="555.0" layoutY="58.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -23,17 +23,17 @@
       <ComboBox fx:id="GraphStationCombo" layoutX="21.0" layoutY="70.0" onAction="#comboGraphStationChanged" prefHeight="30.0" prefWidth="174.0" promptText="STATION" />
       <ComboBox fx:id="GraphYearCombo" layoutX="224.0" layoutY="70.0" onAction="#comboGraphYearChanged" prefHeight="31.0" prefWidth="104.0" promptText="YEAR" />
       <ComboBox fx:id="GraphMonthCombo" layoutX="359.0" layoutY="70.0" onAction="#comboGraphMonthChanged" prefHeight="30.0" prefWidth="117.0" promptText="MONTH" />
-      <Label fx:id="monthText" layoutX="459.0" layoutY="272.0" rotate="-90.0" text="Month">
+      <Label fx:id="monthText" layoutX="491.0" layoutY="262.0" rotate="-90.0" text="Month">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="yearText" layoutX="885.0" layoutY="557.0" text="Year">
+      <Label fx:id="yearText" layoutX="904.0" layoutY="543.0" text="Year">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label fx:id="cityText" layoutX="685.0" layoutY="501.0" text="City">
+      <Label fx:id="cityText" layoutX="702.0" layoutY="489.0" text="City">
          <font>
             <Font size="25.0" />
          </font>

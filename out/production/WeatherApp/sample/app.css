@@ -1,8 +1,7 @@
 
 .root {
 
-    -fx-background-color: aliceblue;
-
+    -fx-background-color: #;
 }
 
 
@@ -46,8 +45,9 @@
 #comboBox {
 
     -fx-font-size: 15px;
-    -fx-background-color: aliceblue;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-background-color: #505050;
+    -fx-text-fill-innner-color: white;
+    -fx-font: bold italic 10pt "Arial" white;
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 
 }
@@ -55,9 +55,14 @@
 #comboBox2 {
 
     -fx-font-size: 15px;
-    -fx-background-color: aliceblue;
+    -fx-text-fill: #fff;
     -fx-font: bold italic 10pt "Arial";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+#comboBox2.label {
+    -fx-background-color: #505050;
+    -fx-text-fill-inner-color: white;
 }
 
 #GraphYearCombo {
@@ -91,4 +96,24 @@
     -fx-background-color: aliceblue;
     -fx-font: bold italic 10pt "Arial";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
+
+#monthText {
+
+    -fx-font: bold italic 20pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
+
+}
+
+#yearText {
+
+    -fx-font: bold italic 20pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
+}
+
+#cityText {
+
+    -fx-font: bold italic 20pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }

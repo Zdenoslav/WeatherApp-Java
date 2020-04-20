@@ -1,6 +1,6 @@
 package sample;
 
-import javafx.beans.binding.DoubleExpression;
+import com.sun.javafx.image.IntPixelGetter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,13 +9,9 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
-import jdk.jfr.Category;
 
-import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 public class graphController {
@@ -148,21 +144,30 @@ public class graphController {
         @FXML
         private void makeReport(ActionEvent event) {
 
-            this.CountReport();
-
             this.FileMake();
 
             this.btnReport.setText("You ROCK");
         }
 
 
-        public void CountReport() {
+         public void CountReport(String key) {
+
+            System.out.println(key);
+
+            Integer maxTempYearr = 0;
+            Integer maxTempMonthh = 0;
+
+            Integer minTempYearr = 0;
+            Integer minTempMonthh = 0;
+
+            Double minTempr;
+            Double maxTempr;
 
             Double totalAF = 0.0;
             Double totalRF = 0.0;
 
             //access the data of a particular/chosen city
-            ArrayList<String[]> records = this.CityData.get(CityData.keySet());
+            ArrayList<String[]> records = this.CityData.get(key);
 
 
             for (String[] temp : records) {
@@ -183,9 +188,27 @@ public class graphController {
 
                 }
 
+                maxTempYearr = Integer.parseInt(temp[0]);
+                maxTempMonthh = Integer.parseInt(temp[1]);
+
+                minTempYearr = Integer.parseInt(temp[0]);
+                minTempMonthh = Integer.parseInt(temp[1]);
+
+
+                maxTempr = Double.parseDouble(temp[2]);
+                minTempr = Double.parseDouble(temp[3]);
+
                 totalAF += Double.parseDouble(temp[4]);
                 totalRF += Double.parseDouble(temp[5]);
 
+                this.minTempMonth = minTempMonthh;
+                this.minTempYear = minTempYearr;
+
+                this.maxTempYear = maxTempYearr;
+                this.maxTempMonth = maxTempMonthh;
+
+                this.maxTemp = maxTempr;
+                this.minTemp = minTempr;
 
                 this.averageAF = totalAF / records.size();
                 this.averageRF = totalRF / records.size();
@@ -197,12 +220,9 @@ public class graphController {
                 System.out.println();
 
             }
-
         }
 
         public void FileMake() {
-
-            System.out.println(averageAF);
 
             String filename = "report.txt";
 
@@ -214,6 +234,8 @@ public class graphController {
                 outputStream.println("\n" + "Report for all the meteorological stations" + "\n");
 
                 for(String key : CityData.keySet() ) {
+
+                    this.CountReport(key);
 
                     sqNumber++;
 

@@ -21,11 +21,6 @@
                  <fx:include source="graph_tab.fxml" />
                </content>
             </Tab>
-          <Tab fx:id="imgTab" text="Report">
-               <content>
-                 <fx:include source="report_tab.fxml" />
-               </content>
-            </Tab>
         </tabs>
       </TabPane>
       <Label fx:id="mainTitle" layoutX="34.0" layoutY="14.0" text="WEATHER APP VIEWER" textFill="#478062">
