@@ -61,8 +61,6 @@ public class StationsController {
 
        comboBox.setItems(list);
 
-       comboBox.getEditor().setStyle("-fx-text-fill: white");
-
        ObservableList<String> list2 = FXCollections.observableArrayList("2011","2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019");
 
        comboBox2.setItems(list2);

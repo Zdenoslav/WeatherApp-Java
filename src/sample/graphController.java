@@ -1,6 +1,7 @@
 package sample;
 
 import com.sun.javafx.image.IntPixelGetter;
+import javafx.beans.binding.DoubleExpression;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -149,19 +150,11 @@ public class graphController {
             this.btnReport.setText("You ROCK");
         }
 
-
+        //a function to count all the values and means for every meteorological station
          public void CountReport(String key) {
 
-            System.out.println(key);
-
-            Integer maxTempYearr = 0;
-            Integer maxTempMonthh = 0;
-
-            Integer minTempYearr = 0;
-            Integer minTempMonthh = 0;
-
-            Double minTempr;
-            Double maxTempr;
+            this.minTemp = Double.MAX_VALUE;
+            this.maxTemp = Double.MIN_VALUE;
 
             Double totalAF = 0.0;
             Double totalRF = 0.0;
@@ -172,7 +165,7 @@ public class graphController {
 
             for (String[] temp : records) {
 
-                if (Double.parseDouble(temp[2]) > maxTemp) {
+                if (Double.parseDouble(temp[2]) > this.maxTemp) {
 
                     this.maxTemp = Double.parseDouble(temp[2]);
                     this.maxTempYear = Integer.parseInt(temp[0]);
@@ -180,7 +173,7 @@ public class graphController {
 
                 }
 
-                if (Double.parseDouble(temp[3]) < minTemp) {
+                if (Double.parseDouble(temp[3]) < this.minTemp) {
 
                     this.minTemp = Double.parseDouble(temp[3]);
                     this.minTempYear = Integer.parseInt(temp[0]);
@@ -188,27 +181,9 @@ public class graphController {
 
                 }
 
-                maxTempYearr = Integer.parseInt(temp[0]);
-                maxTempMonthh = Integer.parseInt(temp[1]);
-
-                minTempYearr = Integer.parseInt(temp[0]);
-                minTempMonthh = Integer.parseInt(temp[1]);
-
-
-                maxTempr = Double.parseDouble(temp[2]);
-                minTempr = Double.parseDouble(temp[3]);
-
                 totalAF += Double.parseDouble(temp[4]);
                 totalRF += Double.parseDouble(temp[5]);
-
-                this.minTempMonth = minTempMonthh;
-                this.minTempYear = minTempYearr;
-
-                this.maxTempYear = maxTempYearr;
-                this.maxTempMonth = maxTempMonthh;
-
-                this.maxTemp = maxTempr;
-                this.minTemp = minTempr;
+            }
 
                 this.averageAF = totalAF / records.size();
                 this.averageRF = totalRF / records.size();
@@ -220,7 +195,7 @@ public class graphController {
                 System.out.println();
 
             }
-        }
+
 
         public void FileMake() {
 
@@ -235,11 +210,16 @@ public class graphController {
 
                 for(String key : CityData.keySet() ) {
 
+                    this.names = key;
+
+                    //if statement to avoid the files with no data
+                    if(this.CityData.get(key).size() == 0){
+                        continue;
+                    }
+
                     this.CountReport(key);
 
                     sqNumber++;
-
-                    this.names = key;
 
                         outputStream.printf(" Number " + sqNumber );
                         outputStream.println();
@@ -272,6 +252,8 @@ public class graphController {
 
             //if nothings is chosen this line is executed
             if (this.city != null && this.year != null && this.month != null) {
+
+                this.month = "January";
 
                 //change the label to the actual month
                 this.monthText.setText(this.month);

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CSVReader">
    <children>
@@ -21,16 +24,11 @@
                  <fx:include source="graph_tab.fxml" />
                </content>
             </Tab>
-          <Tab fx:id="imgTab" text="Report">
-               <content>
-                 <fx:include source="report_tab.fxml" />
-               </content>
-            </Tab>
         </tabs>
       </TabPane>
-      <Label fx:id="mainTitle" layoutX="34.0" layoutY="14.0" text="WEATHER APP VIEWER" textFill="#478062">
+      <Label fx:id="mainTitle" alignment="CENTER" layoutX="44.0" layoutY="14.0" opacity="0.8" prefHeight="63.0" prefWidth="337.0" text="Weather Viewer" textFill="#478062" textOverrun="CLIP">
          <font>
-            <Font size="18.0" />
+            <Font name="Tinos" size="40.0" />
          </font></Label>
    </children>
 </AnchorPane>
