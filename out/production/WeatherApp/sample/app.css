@@ -1,13 +1,20 @@
 
 .root {
 
-    -fx-background-color: #E8E8E8;
+    -fx-background-color: #EAF4FE;
 }
 
 
-#yearText {
+#cityTitle {
 
+    -fx-font-size: 32px;
+    -fx-font-family: Amiri;
 
+}
+
+#yearTitle {
+    -fx-font-size: 32px;
+    -fx-font-family: Amiri;
 }
 
 #setTableHeader {
@@ -17,17 +24,17 @@
 
 #mainTitle {
     -fx-font-size: 40px;
-    letter-spacing: 10;
+    -fx-font-family: Amiri;
 }
 
 #graphTab {
-    -fx-font-size: 30px;
-    -fx-font: bold italic 10pt "Tinos";
+    -fx-font-size: 35px;
+    -fx-font: bold italic 10pt "Amiri";
 }
 
 #stations {
-    -fx-font-size: 30px;
-    -fx-font: bold italic 10pt "Tinos";
+    -fx-font-size: 35x;
+    -fx-font: bold italic 10pt "Amiri";
 }
 
 #Table {
@@ -35,20 +42,32 @@
     -fx-border-radius: 20px;
 }
 
+.chart {
+
+    -fx-background-color: #77A3C6;
+
+}
 #comboBox {
 
     -fx-background-color: #77A3C6;
     -fx-font-size: 10px;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 
 }
 
+
+#Table {
+
+    -fx-background-color: #EAF4FE;
+}
+
 #comboBox2 {
 
+    -fx-text-fill: white;
     -fx-background-color: #77A3C6;
     -fx-font-size: 10px;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
@@ -56,7 +75,7 @@
 
     -fx-background-color: #77A3C6;
     -fx-font-size: 15px;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 
 }
@@ -65,7 +84,7 @@
 
     -fx-background-color: #77A3C6;
     -fx-font-size: 15px;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
@@ -73,7 +92,7 @@
 
     -fx-background-color: #77A3C6;
     -fx-font-size: 15px;
-    -fx-font: bold italic 10pt "Arial";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
@@ -81,26 +100,26 @@
 
     -fx-font-size: 15px;
     -fx-background-color: #77A3C6;
-    -fx-font: bold italic 10pt "Tinos";
+    -fx-font: bold italic 10pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
 
 #monthText {
 
-    -fx-font: bold italic 20pt "Tinos";
+    -fx-font: bold italic 20pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 
 }
 
 #yearText {
 
-    -fx-font: bold italic 20pt "Tinos";
+    -fx-font: bold italic 20pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }
 
 #cityText {
 
-    -fx-font: bold italic 20pt "Tinos";
+    -fx-font: bold italic 20pt "Amiri";
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }

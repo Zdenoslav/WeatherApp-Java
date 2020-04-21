@@ -5,12 +5,18 @@ import javafx.beans.binding.DoubleExpression;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
@@ -74,6 +80,9 @@ public class graphController {
     private Button btnReport;
 
     @FXML
+    private Button btnReport2;
+
+    @FXML
     private ComboBox<String> GraphYearCombo;
 
     @FXML
@@ -82,8 +91,10 @@ public class graphController {
     @FXML
     private ComboBox<String> GraphMonthCombo;
 
-    @FXML
-    private void initialize() {
+
+
+        @FXML
+        private void initialize() {
 
         //create a new object of the CSVReader
         CSVReader stationRead = new CSVReader();
@@ -107,7 +118,7 @@ public class graphController {
 
         GraphMonthCombo.setItems(list3);
 
-    }
+        }
         //getting the data into the graph
 
         @FXML
@@ -115,23 +126,25 @@ public class graphController {
 
             this.city = GraphStationCombo.getValue();
 
-            this.setGraph();
-
-            System.out.println("DEEP WORK");
-
-        }
-
-        //binding the attribute to the year
-        public void comboGraphYearChanged(ActionEvent event) {
-
-            this.year = GraphYearCombo.getValue();
-
            // this.setGraph();
 
             System.out.println("DEEP WORK");
 
         }
 
+        @FXML
+        //binding the attribute to the year
+        public void comboGraphYearChanged(ActionEvent event) {
+
+            this.year = GraphYearCombo.getValue();
+
+           this.setGraph();
+
+            System.out.println("DEEP WORK");
+
+        }
+
+        @FXML
         public void comboGraphMonthChanged(ActionEvent event) {
 
             this.month = GraphMonthCombo.getValue();
@@ -142,6 +155,7 @@ public class graphController {
 
         }
 
+
         @FXML
         private void makeReport(ActionEvent event) {
 
@@ -149,6 +163,8 @@ public class graphController {
 
             this.btnReport.setText("You ROCK");
         }
+
+
 
         //a function to count all the values and means for every meteorological station
          public void CountReport(String key) {
@@ -194,7 +210,7 @@ public class graphController {
                 System.out.println(maxTempYear);
                 System.out.println();
 
-            }
+         }
 
 
         public void FileMake() {
@@ -246,14 +262,13 @@ public class graphController {
 
         }
 
-         public void setMyChart() {
+
+        public void setMyChart() {
 
             myChart.getData().clear();
 
             //if nothings is chosen this line is executed
             if (this.city != null && this.year != null && this.month != null) {
-
-                this.month = "January";
 
                 //change the label to the actual month
                 this.monthText.setText(this.month);
@@ -294,7 +309,6 @@ public class graphController {
         public void setGraph() {
 
             this.setMyChart();
-
 
             //creating a graph
             XYChart.Series series1 = new XYChart.Series();
