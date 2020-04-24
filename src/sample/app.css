@@ -1,31 +1,69 @@
 
+/* download from https://www.pexels.com/photo/white-and-black-tree-illustration-66284/ */
 .root {
 
     -fx-background-color: #EAF4FE;
+    -fx-background-image: url("apppic3.jpg") ;
 }
 
+#mainTitle {
+
+    -fx-font-family: Amiri;
+    -fx-font-size: 32px;
+
+}
+
+.button{
+    -fx-text-fill: black;
+    -fx-background-color: #EAF4FE;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
+
+.button:hover {
+    -fx-background-color: #77A3C6;
+}
+
+/* TITLES */
+#mainTitle {
+    -fx-font-size: 40px;
+    -fx-font-family: Amiri;
+    -fx-effect: dropshadow( one-pass-box , black , 6 , 0.0 , 2 , 0 );
+}
 
 #cityTitle {
 
     -fx-font-size: 32px;
     -fx-font-family: Amiri;
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 
 }
 
 #yearTitle {
     -fx-font-size: 32px;
     -fx-font-family: Amiri;
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }
+
+#historyTitle {
+    -fx-font-size: 27px;
+    -fx-font-family: Amiri;
+    -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
+}
+
+
 
 #setTableHeader {
 
-    -fx-background-color: crimson;
+    -fx-background-color: ;
 }
 
-#mainTitle {
-    -fx-font-size: 40px;
-    -fx-font-family: Amiri;
+#Table {
+
+    -fx-border-radius: 20px;
 }
+
 
 #graphTab {
     -fx-font-size: 35px;
@@ -37,16 +75,44 @@
     -fx-font: bold italic 10pt "Amiri";
 }
 
-#Table {
 
-    -fx-border-radius: 20px;
-}
 
 .chart {
 
-    -fx-background-color: #77A3C6;
-
+    -fx-background-image: inherit;
 }
+
+.chart-bar {
+    -fx-bar-fill:;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+}
+
+
+.chart-title {
+    -fx-text-fill: #4682b4;
+    -fx-font-size: 1.6em;
+}
+
+.chart-bar-label {
+    -fx-text-fill: black;
+    -fx-font-size: 80px;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-font-size: 1.2em;
+    -fx-font: bold;
+    -fx-text-fill: white;
+}
+
+
+.axis-tick-mark {
+    -fx-stroke: #637040;
+    -fx-stroke-width: 3;
+}
+
+
 #comboBox {
 
     -fx-background-color: #77A3C6;
@@ -56,11 +122,6 @@
 
 }
 
-
-#Table {
-
-    -fx-background-color: #EAF4FE;
-}
 
 #comboBox2 {
 
@@ -104,22 +165,33 @@
     -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
+#btnReport2 {
+
+    -fx-font-size: 15px;
+    -fx-background-color: #77A3C6;
+    -fx-font: bold italic 10pt "Amiri";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+}
+
 
 #monthText {
 
-    -fx-font: bold italic 20pt "Amiri";
+    -fx-font-size: 32px;
+    -fx-font-family: Amiri;
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 
 }
 
 #yearText {
 
-    -fx-font: bold italic 20pt "Amiri";
+    -fx-font-size: 32px;
+    -fx-font-family: Amiri;
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }
 
 #cityText {
 
-    -fx-font: bold italic 20pt "Amiri";
+    -fx-font-size: 32px;
+    -fx-font-family: Amiri;
     -fx-effect: dropshadow( one-pass-box , black , 4 , 0.0 , 2 , 0 );
 }

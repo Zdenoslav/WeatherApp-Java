@@ -18,15 +18,31 @@ import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
 import java.io.*;
+import java.time.Month;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.Map;
 
 public class graphController {
 
-    final static String maxtemp = "MaxTemp";
-    final static String mintemp = "MinTemp";
-    final static String TotalAirFrost = "TotalAirFrost";
-    final static String TotalRainFall = "TotalRainFall";
+    final static String maxtemp = "Max Temp";
+    final static String mintemp = "Min Temp";
+    final static String TotalAirFrost = "Total Air Frost";
+    final static String TotalRainFall = "Total Rain Fall";
+
+    final static String january = "January";
+    final static String february = "February";
+    final static String march = "March";
+    final static String april = "April";
+    final static String may = "May";
+    final static String june = "June";
+    final static String july = "July";
+    final static String august = "August";
+    final static String september = "September";
+    final static String october = "October";
+    final static String november = "November";
+    final static String december = "December";
 
     @FXML
     private Label monthText;
@@ -76,11 +92,14 @@ public class graphController {
 
     private String eachCity;
 
+    private Integer dat;
+
     @FXML
     private Button btnReport;
 
     @FXML
-    private Button btnReport2;
+    private Button btnBarChart;
+
 
     @FXML
     private ComboBox<String> GraphYearCombo;
@@ -90,7 +109,6 @@ public class graphController {
 
     @FXML
     private ComboBox<String> GraphMonthCombo;
-
 
 
         @FXML
@@ -109,26 +127,71 @@ public class graphController {
         ObservableList<String> list = FXCollections.observableArrayList(this.CityData.keySet());
 
         GraphStationCombo.setItems(list);
+        GraphStationCombo.setEditable(true);
 
         ObservableList<String> list2 = FXCollections.observableArrayList("2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019");
 
         GraphYearCombo.setItems(list2);
+        GraphYearCombo.setEditable(true);
 
-        ObservableList<String> list3 = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12");
+        System.out.println();
+
+        ObservableList<String> list3 = FXCollections.observableArrayList("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
         GraphMonthCombo.setItems(list3);
+        GraphMonthCombo.setEditable(true);
 
         }
         //getting the data into the graph
 
+        private static String getMonthNumber(String list3) {
+            if (list3 == "January") {
+                return "1";
+            }
+            if (list3 =="February"){
+                return "2";
+            }
+            if (list3 == "March"){
+                return "3";
+            }
+            if (list3 == "April"){
+                return "4";
+            }
+            if (list3 == "May"){
+                return "5";
+            }
+            if (list3 == "June"){
+                return "6";
+            }
+            if (list3 == "July"){
+                return "7";
+            }
+            if (list3 == "August"){
+                return "8";
+            }
+            if (list3 == "September"){
+                return "9";
+            }
+            if (list3 == "October"){
+                return "10";
+            }
+            if (list3 == "November"){
+                return "11";
+            }
+            if (list3 == "December"){
+                return "12";
+            }
+            return null;
+        }
+
+
         @FXML
         private void comboGraphStationChanged(ActionEvent event) {
 
+
             this.city = GraphStationCombo.getValue();
-
-           // this.setGraph();
-
-            System.out.println("DEEP WORK");
+            //this.setGraph();
+            this.setGraph2();
 
         }
 
@@ -137,10 +200,8 @@ public class graphController {
         public void comboGraphYearChanged(ActionEvent event) {
 
             this.year = GraphYearCombo.getValue();
-
-           this.setGraph();
-
-            System.out.println("DEEP WORK");
+           // this.setGraph();
+            this.setGraph2();
 
         }
 
@@ -148,11 +209,8 @@ public class graphController {
         public void comboGraphMonthChanged(ActionEvent event) {
 
             this.month = GraphMonthCombo.getValue();
-
-            this.setGraph();
-
-            System.out.println("DEEP WORK");
-
+            //this.setGraph();
+           // this.setGraph2();
         }
 
 
@@ -164,7 +222,16 @@ public class graphController {
             this.btnReport.setText("You ROCK");
         }
 
+        public void myFunction(String text){
+                cityText.setText(text);
+                myChart.getData();
 
+        }
+
+        public void myFunction2(String text) {
+               yearText.setText(text);
+               myChart.setTitle(text);
+        }
 
         //a function to count all the values and means for every meteorological station
          public void CountReport(String key) {
@@ -224,6 +291,11 @@ public class graphController {
 
                 outputStream.println("\n" + "Report for all the meteorological stations" + "\n");
 
+                //give the user the time when the report was created
+                Date date = new Date();
+
+                outputStream.printf("%tT%n", date);
+
                 for(String key : CityData.keySet() ) {
 
                     this.names = key;
@@ -234,6 +306,7 @@ public class graphController {
                     }
 
                     this.CountReport(key);
+
 
                     sqNumber++;
 
@@ -265,6 +338,7 @@ public class graphController {
 
         public void setMyChart() {
 
+
             myChart.getData().clear();
 
             //if nothings is chosen this line is executed
@@ -284,7 +358,7 @@ public class graphController {
 
                 for (String[] temp : records) {
 
-                    if (temp[0].equals(this.year) && temp[1].equals(this.month)) {
+                    if (temp[0].equals(this.year) && temp[1].equals(getMonthNumber(this.month))) {
 
                         max = temp[2];
 
@@ -293,11 +367,6 @@ public class graphController {
                         TAF = temp[4];
 
                         TRF = temp[5];
-
-                        System.out.println(temp[1]);
-                        System.out.println(temp[2]);
-                        System.out.println(temp[3]);
-                        System.out.println(temp[4]);
 
                     }
 
@@ -308,14 +377,15 @@ public class graphController {
 
         public void setGraph() {
 
-            this.setMyChart();
-
             //creating a graph
             XYChart.Series series1 = new XYChart.Series();
+
             CategoryAxis xAxis = new CategoryAxis();
+
+
             NumberAxis yAxis = new NumberAxis();
             BarChart<String, Number>
-                    bc = new BarChart<String, Number>(xAxis, yAxis);
+                    bc = new BarChart<>(xAxis, yAxis);
             bc.setTitle("STATISTICS");
             //name of the city
             series1.setName("Max Temperature");
@@ -326,6 +396,7 @@ public class graphController {
 
             XYChart.Series series2 = new XYChart.Series();
             series2.setName("Min Temperature");
+
 
             series2.getData().add(new XYChart.Data(mintemp, Double.parseDouble(min)));
 
@@ -346,4 +417,157 @@ public class graphController {
             myChart.getData().add(series4);
         }
 
+
+
+
+        public void setMyChart2() {
+
+
+        myChart.getData().clear();
+
+        //if nothings is chosen this line is executed
+        if (this.city != null && this.year != null && this.month != null) {
+
+            //change the label to the actual year
+            this.yearText.setText(this.year);
+
+            //change the label to the actual city
+            this.cityText.setText(this.city);
+
+            //access the data of a particular/chosen city
+            ArrayList<String[]> records = this.CityData.get(this.city);
+
+            for (String[] temp : records) {
+
+                if (temp[0].equals(this.year)) {
+
+                    max = temp[2];
+
+                    min = temp[3];
+
+                    TAF = temp[4];
+
+                    TRF = temp[5];
+
+                }
+
+            }
+
+        }
+       }
+
+    public void setGraph2() {
+
+        this.setMyChart2();
+
+        //creating a graph
+        XYChart.Series series1 = new XYChart.Series();
+
+        CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+        BarChart<String, Number>
+                bc = new BarChart<>(xAxis, yAxis);
+        bc.setTitle("STATISTICS");
+        //name of the city
+        series1.setName("Max Temp");
+
+        series1.getData().add(new XYChart.Data(january, Integer.parseInt(max)));
+        series1.getData().add(new XYChart.Data(january, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(january, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(february, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(february, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(february, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(february, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(march, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(march, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(march, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(march, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(april, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(april, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(april, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(april, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(may, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(may, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(may, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(may, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(june, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(june, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(june, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(june, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(july, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(july, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(july, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(july, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(august, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(august, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(august, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(august, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(september, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(september, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(september, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(september, Double.parseDouble(TRF)));
+
+
+        series1.getData().add(new XYChart.Data(october, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(october, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(october, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(october, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(november, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(november, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(november, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(november, Double.parseDouble(TRF)));
+
+        series1.getData().add(new XYChart.Data(december, Double.parseDouble(max)));
+        series1.getData().add(new XYChart.Data(december, Double.parseDouble(min)));
+        series1.getData().add(new XYChart.Data(december, Double.parseDouble(TAF)));
+        series1.getData().add(new XYChart.Data(december, Double.parseDouble(TRF)));
+
+
+
+        myChart.getData().add(series1);
+
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Min Temp");
+
+        series2.getData().add(new XYChart.Data(january, Double.parseDouble(max)));
+        series2.getData().add(new XYChart.Data(january, Double.parseDouble(min)));
+        series2.getData().add(new XYChart.Data(january, Double.parseDouble(TAF)));
+        series2.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
+
+        myChart.getData().add(series2);
+
+        XYChart.Series series3 = new XYChart.Series();
+        series3.setName("Total Air Frost");
+
+        series3.getData().add(new XYChart.Data(january, Double.parseDouble(max)));
+        series3.getData().add(new XYChart.Data(january, Double.parseDouble(min)));
+        series3.getData().add(new XYChart.Data(january, Double.parseDouble(TAF)));
+        series3.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
+
+
+        myChart.getData().add(series3);
+
+        XYChart.Series series4 = new XYChart.Series();
+        series4.setName("Total Rain Fall");
+
+        series4.getData().add(new XYChart.Data(january, Double.parseDouble(max)));
+        series4.getData().add(new XYChart.Data(january, Double.parseDouble(min)));
+        series4.getData().add(new XYChart.Data(january, Double.parseDouble(TAF)));
+        series4.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
+
+
+        myChart.getData().add(series4);
     }
+}
+
+
