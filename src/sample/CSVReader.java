@@ -15,16 +15,10 @@ public class CSVReader {
 
         File[] files = new File("/home/c1964235/WeatherApp/src/sample/DATA").listFiles();
         this.CsvReader(files);
-      //  this.PrintCityRecord("Aberporth.csv");
-       // for( File station : files){
-         //   System.out.println(station);
- //       }
 
     }
 
     public Map<String, ArrayList<String[]>> getCity_data() { return city_data; }
-
-
 
     public void CsvReader(File[] files) {
 
@@ -55,19 +49,6 @@ public class CSVReader {
         }
 
 
-    }
-
-    public void PrintCityRecord(String name) {
-
-        ArrayList<String[]> records = this.city_data.get(name);
-        //now records has your records
-        //here is a way to loop through the records
-        for (String[] temp : records) {
-            for (String temp1 : temp) {
-                System.out.println(temp1 + "");
-            }
-            System.out.println("\n");
-        }
     }
 
 }

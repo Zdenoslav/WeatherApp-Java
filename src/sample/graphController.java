@@ -190,8 +190,9 @@ public class graphController {
 
 
             this.city = GraphStationCombo.getValue();
-            //this.setGraph();
-            this.setGraph2();
+            //this.setMyChart();
+            this.setGraph();
+           // this.setGraph2();
 
         }
 
@@ -200,8 +201,9 @@ public class graphController {
         public void comboGraphYearChanged(ActionEvent event) {
 
             this.year = GraphYearCombo.getValue();
-           // this.setGraph();
-            this.setGraph2();
+            //this.setMyChart();
+            this.setGraph();
+           // this.setGraph2();
 
         }
 
@@ -209,7 +211,8 @@ public class graphController {
         public void comboGraphMonthChanged(ActionEvent event) {
 
             this.month = GraphMonthCombo.getValue();
-            //this.setGraph();
+           // this.setMyChart();
+            this.setGraph();
            // this.setGraph2();
         }
 
@@ -224,13 +227,17 @@ public class graphController {
 
         public void myFunction(String text){
                 cityText.setText(text);
-                myChart.getData();
 
         }
 
         public void myFunction2(String text) {
                yearText.setText(text);
-               myChart.setTitle(text);
+              // this.setGraph();
+        }
+
+        public void myFunction3(String text) {
+               monthText.setText(text);
+               //this.setGraph();
         }
 
         //a function to count all the values and means for every meteorological station
@@ -332,12 +339,10 @@ public class graphController {
                 e.printStackTrace();
             }
 
-
         }
 
 
         public void setMyChart() {
-
 
             myChart.getData().clear();
 
@@ -358,7 +363,7 @@ public class graphController {
 
                 for (String[] temp : records) {
 
-                    if (temp[0].equals(this.year) && temp[1].equals(getMonthNumber(this.month))) {
+                    if (temp[0].equals(this.year) && temp[1].equals(this.month)) {
 
                         max = temp[2];
 
@@ -377,11 +382,12 @@ public class graphController {
 
         public void setGraph() {
 
+            this.setMyChart();
+
             //creating a graph
             XYChart.Series series1 = new XYChart.Series();
 
             CategoryAxis xAxis = new CategoryAxis();
-
 
             NumberAxis yAxis = new NumberAxis();
             BarChart<String, Number>
@@ -396,7 +402,6 @@ public class graphController {
 
             XYChart.Series series2 = new XYChart.Series();
             series2.setName("Min Temperature");
-
 
             series2.getData().add(new XYChart.Data(mintemp, Double.parseDouble(min)));
 

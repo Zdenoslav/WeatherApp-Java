@@ -50,7 +50,10 @@ public class StationsController {
     private Label monthTitle;
 
     @FXML
-    private TabPane thisTabPane;
+    private String tabName;
+
+    @FXML
+    private TabPane mainTabPane;
 
     @FXML
     private Label newTab;
@@ -99,7 +102,21 @@ public class StationsController {
         ObservableList<String> list3 = FXCollections.observableArrayList("1", "2", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
         comboBox3.setItems(list3);
+        comboBox3.setEditable(true);
 
+    }
+
+    @FXML
+    public Tab createNewTab(String tabName) {
+
+        TabPane mainTabPane = new TabPane();
+
+        this.mainTabPane = mainTabPane;
+        Tab tabby = new Tab(tabName);
+        mainTabPane.getTabs().add(tabby);
+        //return tabby;
+        System.out.println(tabby);
+        return tabby;
     }
 
     @FXML
@@ -113,6 +130,16 @@ public class StationsController {
             graphController gController = fxmlLoader.getController();
             gController.myFunction(comboBox.getValue());
             gController.myFunction2(comboBox2.getValue());
+            gController.myFunction3(comboBox3.getValue());
+
+
+            createNewTab(tabName);
+
+            //access the data of a particular/chosen city
+           // ArrayList<String[]> records = this.CityData.get(this.city);
+
+           // gController.setMyChart();
+           // gController.setGraph();
 
            // @FXML
            // private TabPane mainTabPane;
@@ -121,30 +148,19 @@ public class StationsController {
               //  mainTabPane.getTabs().add(new Tab(team.getTeamName()));
 
             //}
-
-            TabPane tabPane = new TabPane();
-            Tab tab1 = new Tab();
-            tabPane.getTabs().add(tab1);
+          //  Tab tab1 = new Tab();
+          //  this.mainTabPane.getTabs().add(tab1);
 
            // Stage stage = new Stage();
-           // stage.setScene(new Scene(root));
-           // stage.show();
+          //  stage.setScene(new Scene(root));
+          //  stage.show();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
 
-        //TabPane tabPane = new TabPane();
-
-        //Tab tab1 = new Tab("Zdenko", new Label("show lal"));
-
-        //tab1.setText("hoo");
-
-        //tabPane.getTabs().add(tab1);
 
         System.out.println("hii");
-
-        System.out.println("oll");
 
     }
 
@@ -153,7 +169,6 @@ public class StationsController {
     private void comboChanged(ActionEvent event) {
 
         this.city = comboBox.getValue();
-
         this.setTable();
 
     }
@@ -175,17 +190,6 @@ public class StationsController {
 
         this.setTable();
     }
-
-
-    //@FXML
-    //public void Tab(ActionEvent event){
-
-    //   Tab sd = new Tab("HISTORY");
-    //   sd.setContent(Source.sourceFor("graph_tab.fxml"));
-//
-    //   TabPane pane = FXMLLoader.load(this.getClass().getResource("graph_tab.fxml"));
-    //    tabpanel.getTabs().add(sd);
-    // }
 
 
     public void setTable() {
@@ -214,34 +218,30 @@ public class StationsController {
             for (String[] temp : records) {
 
                 if (temp[0].equals(this.year)) {
-
-                    if (temp[1].equals(this.month))break; {
-
-                        //clear all the previous data
-                        Table.getChildren().clear();
-
-                        this.setTableHeader();
-
-                        //access the data of a particular/chosen city
-                        //  ArrayList<String[]> records = this.CityData.get(this.city);
-                        Table.add(new Text(temp[1]), 0, Integer.parseInt(temp[1]));
-                        Table.add(new Text(temp[2]), 1, Integer.parseInt(temp[1]));
-                        Table.add(new Text(temp[3]), 2, Integer.parseInt(temp[1]));
-                        Table.add(new Text(temp[4]), 3, Integer.parseInt(temp[1]));
-                        Table.add(new Text(temp[5]), 4, Integer.parseInt(temp[1]));
-
+                    if (this.month != null) {
+                        if (temp[1].equals(this.month)) {
+                            this.addTableRow(temp, 1);
+                            break;
+                        }
                     }
-
-
-
-
+                    else {
+                        this.addTableRow(temp, Integer.parseInt(temp[1]));
+                    }
                 }
-
             }
 
         }
 
     }
+
+    private void addTableRow(String[] temp, Integer rowIndex) {
+        Table.add(new Text(temp[1]), 0, rowIndex); //label, colIndex, rowIndex
+        Table.add(new Text(temp[2]), 1, rowIndex);
+        Table.add(new Text(temp[3]), 2, rowIndex);
+        Table.add(new Text(temp[4]), 3, rowIndex);
+        Table.add(new Text(temp[5]), 4, rowIndex);
+    }
+
 
     private void setTableHeader() {
 
