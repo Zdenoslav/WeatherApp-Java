@@ -36,7 +36,15 @@
             <Font name="Amiri" size="29.0" />
          </font>
       </Label>
-      <BarChart fx:id="myChart" layoutX="584.0" layoutY="70.0" prefHeight="435.0" prefWidth="529.0">
+      <BarChart fx:id="myChart" layoutX="657.0" layoutY="70.0" prefHeight="240.0" prefWidth="456.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <BarChart fx:id="barChart" layoutX="685.0" layoutY="342.0" prefHeight="274.0" prefWidth="436.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

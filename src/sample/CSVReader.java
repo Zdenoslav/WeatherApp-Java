@@ -13,7 +13,7 @@ public class CSVReader {
 
     public CSVReader() {
 
-        File[] files = new File("/home/c1964235/WeatherApp/src/sample/DATA").listFiles();
+        File[] files = new File("src/sample/DATA").listFiles();
         this.CsvReader(files);
 
     }
@@ -29,7 +29,7 @@ public class CSVReader {
             } else {
                 try {
 
-                    String pathname = "/home/c1964235/WeatherApp/src/sample/DATA/" + file.getName();
+                    String pathname = "src/sample/DATA/" + file.getName();
 
                     Scanner scan = new Scanner(new File(pathname));
                     ArrayList<String[]> records = new ArrayList<String[]>();
@@ -47,7 +47,6 @@ public class CSVReader {
 
             }
         }
-
 
     }
 

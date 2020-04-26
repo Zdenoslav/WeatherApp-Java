@@ -58,6 +58,9 @@ public class graphController {
     @FXML
     private BarChart myChart;
 
+    @FXML
+    private BarChart barChart;
+
     Map<String, ArrayList<String[]>> CityData;
 
     private String city = null;
@@ -194,6 +197,7 @@ public class graphController {
             this.city = GraphStationCombo.getValue();
            // this.setMyChart();
             this.setGraph();
+            this.setGraph2();
         }
 
         @FXML
@@ -203,6 +207,7 @@ public class graphController {
             this.year = GraphYearCombo.getValue();
             //this.setMyChart();
             this.setGraph();
+            this.setGraph2();
         }
 
         @FXML
@@ -211,6 +216,7 @@ public class graphController {
             this.month = GraphMonthCombo.getValue();
            //this.setMyChart();
             this.setGraph();
+            this.setGraph2();
         }
 
 
@@ -452,39 +458,38 @@ public class graphController {
 
         public void setMyChart2() {
 
+            barChart.getData().clear();
 
-        myChart.getData().clear();
+            //if nothings is chosen this line is executed
+            if (this.city != null && this.year != null && this.month != null) {
 
-        //if nothings is chosen this line is executed
-        if (this.city != null && this.year != null && this.month != null) {
+                //change the label to the actual year
+                this.yearText.setText(this.year);
 
-            //change the label to the actual year
-            this.yearText.setText(this.year);
+                //change the label to the actual city
+                this.cityText.setText(this.city);
 
-            //change the label to the actual city
-            this.cityText.setText(this.city);
+                //access the data of a particular/chosen city
+                ArrayList<String[]> records = this.CityData.get(this.city);
 
-            //access the data of a particular/chosen city
-            ArrayList<String[]> records = this.CityData.get(this.city);
+                for (String[] temp : records) {
 
-            for (String[] temp : records) {
+                    if (temp[0].equals(this.year)) {
 
-                if (temp[0].equals(this.year)) {
+                        max = temp[2];
 
-                    max = temp[2];
+                        min = temp[3];
 
-                    min = temp[3];
+                        TAF = temp[4];
 
-                    TAF = temp[4];
+                        TRF = temp[5];
 
-                    TRF = temp[5];
+                    }
 
                 }
 
             }
-
         }
-       }
 
     public void setGraph2() {
 
@@ -496,7 +501,7 @@ public class graphController {
         CategoryAxis xAxis = new CategoryAxis();
         NumberAxis yAxis = new NumberAxis();
         BarChart<String, Number>
-                bc = new BarChart<>(xAxis, yAxis);
+                bc = new BarChart(xAxis, yAxis);
         bc.setTitle("STATISTICS");
         //name of the city
         series1.setName("Max Temp");
@@ -564,7 +569,7 @@ public class graphController {
 
 
 
-        myChart.getData().add(series1);
+        barChart.getData().add(series1);
 
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("Min Temp");
@@ -574,7 +579,7 @@ public class graphController {
         series2.getData().add(new XYChart.Data(january, Double.parseDouble(TAF)));
         series2.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
 
-        myChart.getData().add(series2);
+        barChart.getData().add(series2);
 
         XYChart.Series series3 = new XYChart.Series();
         series3.setName("Total Air Frost");
@@ -585,7 +590,7 @@ public class graphController {
         series3.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
 
 
-        myChart.getData().add(series3);
+        barChart.getData().add(series3);
 
         XYChart.Series series4 = new XYChart.Series();
         series4.setName("Total Rain Fall");
@@ -596,7 +601,7 @@ public class graphController {
         series4.getData().add(new XYChart.Data(january, Double.parseDouble(TRF)));
 
 
-        myChart.getData().add(series4);
+        barChart.getData().add(series4);
     }
 }
 
