@@ -116,6 +116,7 @@ public class StationsController {
         mainTabPane.getTabs().add(tabby);
         //return tabby;
         System.out.println(tabby);
+        tabby.setText("ii");
         return tabby;
     }
 
@@ -123,17 +124,24 @@ public class StationsController {
     public void CreateNewTab(ActionEvent event) {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("graph_tab.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("report_tab.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             root.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
+         //   graphController gController = fxmlLoader.getController();
+          //  gController.myFunction(comboBox.getValue());
+         //   gController.myFunction2(comboBox2.getValue());
+          //  gController.myFunction3(comboBox3.getValue());
 
-            graphController gController = fxmlLoader.getController();
-            gController.myFunction(comboBox.getValue());
-            gController.myFunction2(comboBox2.getValue());
-            gController.myFunction3(comboBox3.getValue());
 
+            TabPane mainTabPane = new TabPane();
 
-            createNewTab(tabName);
+            this.mainTabPane = mainTabPane;
+            Tab tabby = new Tab(tabName);
+            mainTabPane.getTabs().add(tabby);
+            //return tabby;
+            System.out.println(tabby);
+            tabby.setText("ii");
+
 
             //access the data of a particular/chosen city
            // ArrayList<String[]> records = this.CityData.get(this.city);
@@ -151,9 +159,9 @@ public class StationsController {
           //  Tab tab1 = new Tab();
           //  this.mainTabPane.getTabs().add(tab1);
 
-           // Stage stage = new Stage();
-          //  stage.setScene(new Scene(root));
-          //  stage.show();
+          //  Stage stage = new Stage();
+          // stage.setScene(new Scene(root));
+           // stage.show();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());

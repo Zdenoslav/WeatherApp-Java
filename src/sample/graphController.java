@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.glass.ui.CommonDialogs;
 import com.sun.javafx.image.IntPixelGetter;
 import javafx.beans.binding.DoubleExpression;
 import javafx.collections.FXCollections;
@@ -7,15 +8,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.*;
 import java.time.Month;
@@ -190,10 +192,8 @@ public class graphController {
 
 
             this.city = GraphStationCombo.getValue();
-            //this.setMyChart();
+           // this.setMyChart();
             this.setGraph();
-           // this.setGraph2();
-
         }
 
         @FXML
@@ -203,27 +203,44 @@ public class graphController {
             this.year = GraphYearCombo.getValue();
             //this.setMyChart();
             this.setGraph();
-           // this.setGraph2();
-
         }
 
         @FXML
         public void comboGraphMonthChanged(ActionEvent event) {
 
             this.month = GraphMonthCombo.getValue();
-           // this.setMyChart();
+           //this.setMyChart();
             this.setGraph();
-           // this.setGraph2();
         }
 
 
         @FXML
+        private ListView listview;
+
+        @FXML
         private void makeReport(ActionEvent event) {
+
+          //  this.start();
 
             this.FileMake();
 
             this.btnReport.setText("You ROCK");
         }
+
+        public void start(Stage stage){
+            try {
+                stage.setTitle("yeaa");
+
+                FileChooser fc = new FileChooser();
+                fc.setInitialDirectory(new File("report.txt"));
+                fc.showSaveDialog(stage);
+
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        };
+
 
         public void myFunction(String text){
                 cityText.setText(text);
@@ -332,6 +349,19 @@ public class graphController {
 
                     }
 
+                 Stage stage = new Stage();
+                 //stage.setScene(new Scene(root));
+                // stage.show();
+
+                FileChooser fileChooser = new FileChooser();
+
+
+                //Set extension filter
+                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+                fileChooser.getExtensionFilters().add(extFilter);
+                fileChooser.setTitle("Open Folder");
+                File file = fileChooser.showOpenDialog(new Stage());
+
                 outputStream.close(); //flushes the data to the file
 
             } catch (FileNotFoundException e) {
@@ -340,8 +370,7 @@ public class graphController {
             }
 
         }
-
-
+        
         public void setMyChart() {
 
             myChart.getData().clear();
@@ -363,7 +392,7 @@ public class graphController {
 
                 for (String[] temp : records) {
 
-                    if (temp[0].equals(this.year) && temp[1].equals(this.month)) {
+                    if (temp[0].equals(this.year) && temp[1].equals(getMonthNumber(this.month))) {
 
                         max = temp[2];
 
@@ -383,7 +412,6 @@ public class graphController {
         public void setGraph() {
 
             this.setMyChart();
-
             //creating a graph
             XYChart.Series series1 = new XYChart.Series();
 
@@ -421,9 +449,6 @@ public class graphController {
 
             myChart.getData().add(series4);
         }
-
-
-
 
         public void setMyChart2() {
 
